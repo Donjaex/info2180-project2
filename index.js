@@ -3,10 +3,12 @@ $(document).ready(function () {
         const page = 'dashboard.php';
         const stateObj = {page: formatForUrl(page)};
         history.replaceState(stateObj, null, formatForUrl(page));
-    })
+    });
+
     $('body').on('click', function (e) {
         const targetClass = $(e.target).attr('class');
         const targetId = $(e.target).attr('id');
+
         if (targetClass === 'no_refresh') {
             e.preventDefault();
             const page = $(e.target).attr('href');
@@ -14,14 +16,14 @@ $(document).ready(function () {
             history.pushState(stateObj, null, formatForUrl(page));
 
             // Load the page and put its contents in the main element.
-            requestMainContent(page);
+            loadMainContent(page);
 
             $(window).on('popstate', function () {
                 const page = history.state.page;
                 const filename = page + '.php';
 
                 // Load the page and put its contents in the main element.
-                requestMainContent(filename);
+                loadMainContent(filename);
             });
         } else if (targetClass === 'contactInfo') {
             e.preventDefault();
@@ -34,7 +36,7 @@ $(document).ready(function () {
 
             $.ajax(`view_contact_info.php?contactName=${contactName}`, {
                 method: 'GET'
-            }).done(response => requestContactInfo(response))
+            }).done(response => loadContactInfo(response))
                 .fail(() => alert('There was a problem with the request.'));
 
             $(window).on('popstate', function () {
@@ -42,7 +44,7 @@ $(document).ready(function () {
                 const filename = page + '.php';
 
                 // Load the page and put its contents in the main element.
-                requestContactInfo(filename);
+                loadContactInfo(filename);
             });
         } else if (targetClass === 'cont_types') {
             e.preventDefault();
@@ -50,7 +52,7 @@ $(document).ready(function () {
 
             $.ajax(`dashboard_contacts.php?filter=${filter}`, {
                 method: 'GET'
-            }).done(response => requestHomeContent(response))
+            }).done(response => loadDashboardContent(response))
                 .fail(() => alert('There was a problem with the request.'));
 
             removeActiveClass();
@@ -64,7 +66,7 @@ $(document).ready(function () {
                 data: {
                     assigned_to: assigned_to
                 }
-            }).done(response => requestContactInfo(response))
+            }).done(response => loadContactInfo(response))
                 .fail(() => alert('There was a problem with the request.'));
         } else if (targetClass === 'switch') {
             let type = $(e.target).attr('value');
@@ -75,19 +77,20 @@ $(document).ready(function () {
                 data: {
                     type: type
                 }
-            }).done(response => requestContactInfo(response))
+            }).done(response => loadContactInfo(response))
                 .fail(() => alert('There was a problem with the request.'));
         } else if (targetId === 'addNote') {
             e.preventDefault();
             let comment = $('#comment').val();
             let contactName = $(e.target).attr('value');
 
+            
             $.ajax(`view_contact_info.php?contactName=${contactName}`, {
                 method: 'POST',
                 data: {
                     comment: comment
                 }
-            }).done(response => requestContactInfo(response))
+            }).done(response => loadContactInfo(response))
                 .fail(() => alert('There was a problem with the request.'));
         }
     });
