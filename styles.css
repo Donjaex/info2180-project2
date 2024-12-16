@@ -1,0 +1,47 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
+    height: 100vh;
+    position: fixed;
+  }
+  
+  .sidebar h4 {
+    font-size: 1.5rem;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #444;
+  }
+  
+  .main {
+    margin-left: 16%;
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .table .badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+  
