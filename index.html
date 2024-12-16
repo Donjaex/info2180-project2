@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 bg-dark text-light sidebar">
+                <h4 class="text-center py-3">Dolphin CRM</h4>
+                <ul class="nav flex-column px-3">
+                    <li class="nav-item"><a class="nav-link text-light" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="new_contact.php">New Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="view_users.php">Users</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="logout.php">Logout</a></li>
+                </ul>
+            </nav>
+            
+    <div class="form-container">
+        <h2>New Contact</h2>
+        <form>
+            <!-- Title Section -->
+            <div class="form-row">
+                <label for="title">Title</label>
+                <select id="title">
+                    <option>Mr</option>
+                    <option>Mrs</option>
+                    <option>Ms</option>
+                    <option>Dr</option>
+                </select>
+            </div>
+    
+            <!-- Grid Layout for Fields -->
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" placeholder="Jane">
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" placeholder="Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="something@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Telephone</label>
+                    <input type="text" id="telephone" placeholder="123-456-7890">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company">
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type">
+                        <option>Sales Lead</option>
+                        <option>Customer</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label for="assigned-to">Assigned To</label>
+                    <select id="assigned-to">
+                        <option>Andy Bernard</option>
+                        <option>Michael Scott</option>
+                    </select>
+                </div>
+            </div>
+    
+            <!-- Save Button -->
+            <div class="button-container">
+                <button type="submit" class="save-button">Save</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
