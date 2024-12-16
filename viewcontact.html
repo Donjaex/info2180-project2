@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Details</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="viewstyles.css" >
+</head>
+<body>
+    <div class="contact-details">
+        <!-- Header Section -->
+        <div class="profile-header">
+            <div class="profile-info">
+                <i class="fa-duotone fa-solid fa-circle-user fa-lg" style="--fa-primary-color: #f3f2f2; --fa-secondary-color: #000000;"></i>
+                <div>
+                    <h1>Mr. Michael Scott</h1>
+                    <p>Created on November 9, 2022 by David Wallace</p>
+                    <p>Updated on November 13, 2022</p>
+                </div>
+            </div>
+            <!-- Buttons on Right -->
+            <div class="actions">
+                <button class="assign">
+                    <i class="fa-solid fa-hand"></i> Assign to me
+                </button>
+                <button class="switch">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>Switch to Sales Lead
+                </button>
+            </div>
+        </div>
+        
+        <!-- Info Grid -->
+        <div class="info">
+            <div class="info-block">
+                <label>Email</label>
+                <p>michael.scott@paper.co</p>
+            </div>
+            <div class="info-block">
+                <label>Telephone</label>
+                <p>876-999-9999</p>
+            </div>
+            <div class="info-block">
+                <label>Company</label>
+                <p>The Paper Company</p>
+            </div>
+            <div class="info-block">
+                <label>Assigned To</label>
+                <p>Jen Levinson</p>
+            </div>
+        </div>
+        
+        <!-- Notes Section -->
+        <section class="notes">
+            <h2><i class="fas fa-pen-to-square"></i> Notes</h2>
+            <div class="note">
+                <strong>Jane Doe</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit...</p>
+                <span><i class="fas fa-clock"></i> November 10, 2022 at 4pm</span>
+            </div>
+            <div class="note">
+                <strong>John Doe</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit...</p>
+                <span><i class="fas fa-clock"></i> November 11, 2022 at 10am</span>
+            </div>
+            
+            <!-- Add Note Section -->
+            <div class="add-note-section">
+                <label for="note">Add a note about Michael</label>
+                <textarea id="note" placeholder="Enter details here"></textarea>
+                <div class="button-container">
+                    <button class="add-note">
+                        <i class="fas fa-paper-plane"></i> Add Note
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    </body>
+    </html>
