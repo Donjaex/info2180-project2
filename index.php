@@ -55,7 +55,7 @@ if ($resultNotes->num_rows > 0) {
         <main class="col-md-10 main">
             <div class="d-flex justify-content-between align-items-center mt-3 mb-4">
                 <h1>Welcome to Dolphin CRM!</h1>
-                <a href="new_contact.php" class="btn btn-primary">+ Add Contact</a>
+                <a href="new_contact.html" class="btn btn-primary">+ Add Contact</a>
             </div>
 
             <!-- Contacts Table -->
@@ -80,6 +80,12 @@ if ($resultNotes->num_rows > 0) {
                                 <td><?php echo htmlspecialchars($contact['company']); ?></td>
                                 <td><?php echo htmlspecialchars($contact['type']); ?></td>
                                 <td><?php echo htmlspecialchars($contact['telephone']); ?></td>
+                                <td>
+                                    <form action="view_contact.php" method="POST" style="display:inline;">
+                                    <input type="hidden" name="contact_id" value="<?php echo $contact['id']; ?>">
+                                    <button type="submit" class="btn btn-sm btn-primary">View</button>
+                                    </form>
+                                </td>
                                 <td>
                                     <?php if (isset($notes[$contact['id']])): ?>
                                         <ul>
